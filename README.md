@@ -1,4 +1,4 @@
-# plaid-java [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.plaid/plaid-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.plaid/plaid-java)
+# plaid-kotlin [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.plaid/plaid-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.plaid/plaid-java)
 
 Java Bindings for the Plaid API (https://www.plaid.com/docs). This library is generated from the [Plaid OpenAPI spec](https://github.com/plaid/plaid-openapi).
 
