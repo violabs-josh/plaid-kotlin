@@ -1,0 +1,91 @@
+package com.plaid.client.model.kotlin
+
+enum class KAccountSubtype(val value: String) : IEnum {
+    _401A("401a"),
+    _401K("401k"),
+    _403B("403b"),
+    _457B("457b"),
+    _529("529"),
+    AUTO("auto"),
+    BROKERAGE("brokerage"),
+    BUSINESS("business"),
+    CASH_MANAGEMENT("cash management"),
+    CASH_ISA("cash isa"),
+    CD("cd"),
+    CHECKING("checking"),
+    COMMERCIAL("commercial"),
+    CONSTRUCTION("construction"),
+    CONSUMER("consumer"),
+    CREDIT_CARD("credit card"),
+    CRYPTO_EXCHANGE("crypto exchange"),
+    EDUCATION_SAVINGS_ACCOUNT("education savings account"),
+    EBT("ebt"),
+    FIXED_ANNUITY("fixed annuity"),
+    GIC("gic"),
+    HEALTH_REIMBURSEMENT_ARRANGEMENT("health reimbursement arrangement"),
+    HOME_EQUITY("home equity"),
+    HSA("hsa"),
+    ISA("isa"),
+    IRA("ira"),
+    KEOGH("keogh"),
+    LIF("lif"),
+    LIFE_INSURANCE("life insurance"),
+    LINE_OF_CREDIT("line of credit"),
+    LIRA("lira"),
+    LOAN("loan"),
+    LRIF("lrif"),
+    LRSP("lrsp"),
+    MONEY_MARKET("money market"),
+    MORTGAGE("mortgage"),
+    MUTUAL_FUND("mutual fund"),
+    NON_CUSTODIAL_WALLET("non-custodial wallet"),
+    NON_TAXABLE_BROKERAGE_ACCOUNT("non-taxable brokerage account"),
+    OTHER("other"),
+    OTHER_ANNUITY("other annuity"),
+    OTHER_INSURANCE("other insurance"),
+    OVERDRAFT("overdraft"),
+    PAYPAL("paypal"),
+    PAYROLL("payroll"),
+    PENSION("pension"),
+    PREPAID("prepaid"),
+    PRIF("prif"),
+    PROFIT_SHARING_PLAN("profit sharing plan"),
+    RDSP("rdsp"),
+    RECURRING("recurring"),
+    RESP("resp"),
+    RETIREMENT("retirement"),
+    REWARDS("rewards"),
+    RLIF("rlif"),
+    RRIF("rrif"),
+    ROTH("roth"),
+    ROTH_401K("roth 401k"),
+    RRSP("rrsp"),
+    SAVINGS("savings"),
+    STUDENT("student"),
+    SAFE_DEPOSIT("safe deposit"),
+    SARSEP("sarsep"),
+    SEP_IRA("sep ira"),
+    SIMPLE_IRA("simple ira"),
+    SIPP("sipp"),
+    STOCK_PLAN("stock plan"),
+    THRIFT_SAVINGS_PLAN("thrift savings plan"),
+    TFSA("tfsa"),
+    TRUST("trust"),
+    UGMA("ugma"),
+    UTMA("utma"),
+    VARIABLE_ANNUITY("variable annuity"),
+    NULL("null"),
+    ENUM_UNKNOWN("ENUM_UNKNOWN");
+
+    override fun toString(): String {
+        return value
+    }
+
+    companion object {
+        fun fromString(value: String): KAccountSubtype = IEnum.fromString(value, valueFn = ::valueOf)
+    }
+
+    class Adapter : EnumAdapter<KAccountSubtype>() {
+        override fun fromString(value: String): KAccountSubtype = KAccountSubtype.fromString(value)
+    }
+}
