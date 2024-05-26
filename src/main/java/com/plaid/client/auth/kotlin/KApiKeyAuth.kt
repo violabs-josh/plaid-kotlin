@@ -8,9 +8,9 @@ import java.net.URI
 import java.net.URISyntaxException
 
 class KApiKeyAuth(
-    val location: String,
     private val paramName: String,
-    private var apiKey: String
+    val location: String = "header",
+    var apiKey: String? = null
 ) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -43,7 +43,9 @@ class KApiKeyAuth(
     }
 
     private fun processBasedOnHeader(request: Request): Request {
-        return request.newBuilder().addHeader(paramName, apiKey).build()
+        val requiredApiKey = apiKey ?: throw IOException("API key is not set")
+
+        return request.newBuilder().addHeader(paramName, requiredApiKey).build()
     }
 
     private fun processBasedOnCookie(request: Request): Request {
